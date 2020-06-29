@@ -1,12 +1,15 @@
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.TrainingAndSertification;
+import variables.InitializeVariable;
 
 public class MainTestPage extends WebDriverSettings {
     private TrainingAndSertification training;
-  //  private WebDriver driver;
+    private InitializeVariable variable;
+    //  private WebDriver driver;
 
     //    private Variables var;
     //rivate String titleLearning = "НАВЧАННЯ І СЕРТИФІКАЦІЯ";
@@ -14,24 +17,12 @@ public class MainTestPage extends WebDriverSettings {
     // List<String> titlesFilter = Arrays.asList(titles);
 
     @BeforeTest
-    public void initialize() {
+    @Parameters({"language"})
+    public void initialize(String language) {
         training = new TrainingAndSertification(driver);
+        variable = new InitializeVariable();
+        variable = variable.initDependOnLanguage(language);
     }
-
-    //  @BeforeTest
-//    //@Parameters({"language"})
-//    public void initializePage(String language) {
-//        training = new TrainingAndCertification(driver);
-//       // var = new Variables("Формат", "Оплата", "Сертифікація", "Безкоштовний");
-//        //  System.out.println();
-//        //   if(language == "UA"){
-//        //      var = new Variables(var.form, var.payment, var.sertification, var.free);
-//        //       var = var.methodXZ(language);
-//        //  }
-//
-//        //   System.out.println(var.toString());
-//
-//    }
 
 
 //    @Test
@@ -39,19 +30,46 @@ public class MainTestPage extends WebDriverSettings {
 //        training.checkTitleLearning(titleLearning);
 //    }
 
-//    @Test
-//    public void checkingTitleFilterFormatSertif() {
-//        //  training.checkFilterTitle(titlesFilter);// не знаю оставлять или нет ????????????????????????
-//        training.selectCheckbox(var.form, var.sertification);
-//        training.verifyFormatResult(var.sertification);
-//    }
-//
-//    @Test
-//    public void checkingTitleFilterPayment() {
-//        training.selectCheckbox(var.payment, var.free);
-//        training.verifyPaymentResult(var.free);
-//    }
+    @Test
+    public void checkingTitleFilterFormatSertif() {
+        //  training.checkFilterTitle(titlesFilter);// не знаю оставлять или нет ????????????????????????
+        training.selectCheckbox(variable.form, variable.sertification);
+        training.verifyFormatResult(variable.sertification);
+    }
 
+    @Test
+    public void checkingTitleFilterDirections() throws InterruptedException {
+        training.selectCheckboxTwoOptions(variable.directions, variable.direction, variable.occupation);
+//        training.selectCheckboxTwoOptions(variable.location, variable.country, variable.city);
+//        training.verifyLocationResult(variable.cityList);
+    }
+
+    @Test
+    public void checkingTitleFilterPayment() {
+        training.selectCheckbox(variable.payment, variable.free);
+        training.verifyPaymentResult(variable.free);
+    }
+
+    @Test
+    public void checkingTitleFilterLocation() {
+        training.selectCheckboxTwoOptions(variable.location, variable.country, variable.city);
+        training.verifyLocationResult(variable.cityList);
+    }
+
+    @Test
+    public void checkingTitleFilterStatus() {
+        training.selectCheckbox(variable.status, variable.statusOpen);
+        training.verifyStatusResult(variable.statOpenlist);
+    }
+
+
+    //Напрямки
+    //div[contains(@class, 'not-expanded')]//div[contains(text(), 'Напрямки')]
+    //li[@data-uid="34-Technologies & Development" and @aria-expanded="false"]//div[contains(@class,"e-icons")]
+    //34-Technologies & Development
+    ////////
+
+    ///////
 
 ///////////////////////////
 //    @Test

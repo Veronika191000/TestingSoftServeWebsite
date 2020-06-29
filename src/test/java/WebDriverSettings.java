@@ -1,6 +1,7 @@
 import browser.BrowserChange;
 import enums.Browsers;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,12 +21,9 @@ public class WebDriverSettings {
     public void setUp(Browsers browser) {
         browsers = new BrowserChange();
         driver = browsers.browserChange(browser);
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--disable-notifications");
-//        WebDriverManager.chromedriver().setup();
-//        driver = new ChromeDriver(options);
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
+
     }
 
     @BeforeClass
@@ -33,8 +31,8 @@ public class WebDriverSettings {
         driver.get(url);
     }
 
-    @AfterTest
-    public void tearDown() {
-        driver.quit();
-    }
+//    @AfterTest
+//    public void tearDown() {
+//        driver.quit();
+//    }
 }
