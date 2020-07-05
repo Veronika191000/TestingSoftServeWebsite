@@ -58,6 +58,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainTestPage.checkingTitleFilterDirections" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestingProjectSoftServe" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainTestPage" />
+      <option name="METHOD_NAME" value="checkingTitleFilterDirections" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainTestPage.checkingTitleFilterFormatSertif" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TestingProjectSoftServe" />
       <option name="PACKAGE_NAME" value="" />
@@ -82,23 +94,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TestingProjectSoftServe" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/Veronika/IdeaProjects/TestingProjectSoftServe/src/test/resources/testing.xml" />
+        <item itemvalue="TestNG.MainTestPage.checkingTitleFilterDirections" />
         <item itemvalue="TestNG.MainTestPage.checkingTitleFilterPayment" />
         <item itemvalue="TestNG.MainTestPage.checkingTitleFilterFormatSertif" />
         <item itemvalue="TestNG.MainTestPage" />
-        <item itemvalue="TestNG.&lt;default&gt;" />
       </list>
     </recent_temporary>
   </component>
@@ -120,41 +122,41 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593468097698" />
-    <state width="1493" height="289" key="GridCell.Tab.0.bottom" timestamp="1593469656058">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1593983484556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="289" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593469656058" />
-    <state width="1493" height="289" key="GridCell.Tab.0.center" timestamp="1593469656058">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593983484556" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1593983484556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="289" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593469656058" />
-    <state width="1493" height="289" key="GridCell.Tab.0.left" timestamp="1593469656058">
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593983484556" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1593983484556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="289" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593469656058" />
-    <state width="1493" height="289" key="GridCell.Tab.0.right" timestamp="1593469656058">
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593983484556" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1593983484556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="289" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593469656058" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1593109307854">
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593983484556" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1593983484556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593109307854" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1593109307854">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593983484556" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1593983484556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593109307854" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1593109307854">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1593983484556" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1593983484556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593109307854" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1593109307854">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1593983484556" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1593983484556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593109307854" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1593358362623">
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1593983484556" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1593979899295">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1593358362623" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1593979899295" />
   </component>
 </project>

@@ -42,27 +42,20 @@ public class TrainingAndSertification {
     @FindBy(how = How.XPATH, using = "//ul[@class='card-options']//li[3]")
     private List<WebElement> listStatus;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='card-top-info d-flex']/h4[@class='card-location']")
-    private List<WebElement> location;
+    @FindBy(how = How.XPATH, using = "//div[@class='card-content-body']/h3")
+    private List<WebElement> directionList;
 
     @FindBy(how = How.XPATH, using = "//h4[@class='card-location']")
     private List<WebElement> listPlaces;
 
-//    @FindBy(how = How.XPATH, using = "//div[contains(@class, 'not-expanded')]//div[contains(text(), 'Формат')]")
-//    private List<WebElement> filtresChecked;
+    @FindBy(how = How.XPATH, using = "//div[@class='search']/input")
+    private WebElement search;
 
-    public void checkTitleLearning(String title) {
-        Assert.assertEquals(heading.getText(), title);
-        System.out.println(heading.getText());
-    }
-
-    public void checkFilterTitle(List<String> titlesFilter) {
-        List<String> currentResult = new ArrayList<String>();
-        List<WebElement> actualResult = filtresTitle;
-        for (WebElement listOfTitles : actualResult) {
-            currentResult.add(listOfTitles.getText());
-        }
-        Assert.assertEquals(titlesFilter, currentResult);
+    public void verifySearchResult(String query){
+        search.sendKeys(query);
+        search.sendKeys(Keys.ENTER);
+        waits.until(ExpectedConditions.visibilityOfAllElements(directionList));
+        checkingList(query, directionList);
     }
 
     //checking checkbox Format
@@ -87,11 +80,11 @@ public class TrainingAndSertification {
         System.out.println(location);
         checkingList(location, listPlaces);
     }
-//    public void verifyDirectionResult(String direction) {
-//        waits.until(ExpectedConditions.visibilityOfAllElements(listPlaces));
-//        System.out.println(location);
-//        checkingList(location, listPlaces);
-//    }
+    public void verifyDirectionResult(String direction) {
+        waits.until(ExpectedConditions.visibilityOfAllElements(directionList));
+        System.out.println(direction);
+        checkingList(direction, directionList);
+    }
 
     public void checkingList(String formatName, List<WebElement> elements) {
         List<String> currentResult = new ArrayList<String>();
@@ -107,14 +100,7 @@ public class TrainingAndSertification {
     public void selectCheckbox(String titleName, String option) {
         String optionXpath = String.format("//a[text()='%s']/../preceding-sibling::div", option);
         clickOptionsTitle(titleName);
-   //     String listXpath = String.format("//div[contains(@class, 'not-expanded')]//div[contains(text(), '%s')]", titleName);
         System.out.println(optionXpath);
-//        System.out.println(listXpath);
-//        boolean searchElem = driver.findElements(By.xpath(listXpath)).size() > 0;
-//        if (searchElem) {
-//            WebElement listX = driver.findElement(By.xpath(listXpath));
-//            listX.click();
-//        }
         waits.until(ExpectedConditions.elementToBeClickable(By.xpath(optionXpath)));
         driver.findElement(By.xpath(optionXpath)).click();
     }
@@ -129,7 +115,6 @@ public class TrainingAndSertification {
         }
     }
     public void selectCheckboxTwoOptions(String titleName, String option, String secondOption) {
-      //  Thread.sleep(3000);
         clickOptionsTitle(titleName);
         String firstOptionXpath = String.format("//li[@data-uid=\"%s\" and @aria-expanded=\"false\"]//div[contains(@class,\"e-icons\")]", option);
         String secondOptionXpath = String.format("//li[@class=\"e-list-item e-level-2\" and @data-uid=\"%s\"]", secondOption);
@@ -142,5 +127,19 @@ public class TrainingAndSertification {
         }
         waits.until(ExpectedConditions.elementToBeClickable(By.xpath(secondOptionXpath)));
         driver.findElement(By.xpath(secondOptionXpath)).click();
+    }
+//////////////////////////////////////////////////
+    public void checkTitleLearning(String title) {
+        Assert.assertEquals(heading.getText(), title);
+        System.out.println(heading.getText());
+    }
+
+    public void checkFilterTitle(List<String> titlesFilter) {
+        List<String> currentResult = new ArrayList<String>();
+        List<WebElement> actualResult = filtresTitle;
+        for (WebElement listOfTitles : actualResult) {
+            currentResult.add(listOfTitles.getText());
+        }
+        Assert.assertEquals(titlesFilter, currentResult);
     }
 }

@@ -1,25 +1,33 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="Test Automation Suit" verbose="1">
-    <test name="ChromeTest">
-        <!--        <parameter name="browser" value="chrome"></parameter>-->
-        <parameter name="browser" value="CHROME"></parameter>
-        <parameter name="language" value="UA"></parameter>
-        <!--        <parameter name="language" value="UA"></parameter>-->
+
+    <test name="FireFoxTestEN">
+        <parameter name="browser" value="FIREFOX"></parameter>
+        <parameter name="language" value="EN"></parameter>
         <classes>
             <class name="MainTestPage"></class>
         </classes>
     </test>
-<!--    <test name="FireFoxTest">-->
-<!--        <parameter name="browser" value="FIREFOX"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="MainTestPage"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="IETest">-->
-<!--        <parameter name="browser" value="ie"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="MainTestPage"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="ChromeTestEN">
+        <parameter name="browser" value="CHROME"></parameter>
+        <parameter name="language" value="EN"></parameter>
+        <classes>
+            <class name="MainTestPage"></class>
+        </classes>
+    </test>
+    <test name="FireFoxTestUA">
+        <parameter name="browser" value="FIREFOX"></parameter>
+        <parameter name="language" value="UA"></parameter>
+        <classes>
+            <class name="MainTestPage"></class>
+        </classes>
+    </test>
+    <test name="ChromeTestUA">
+        <parameter name="browser" value="CHROME"></parameter>
+        <parameter name="language" value="UA"></parameter>
+        <classes>
+            <class name="MainTestPage"></class>
+        </classes>
+    </test>
 </suite>

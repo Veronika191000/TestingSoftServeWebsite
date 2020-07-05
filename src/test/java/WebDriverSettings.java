@@ -9,11 +9,13 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+import variables.InitializeVariable;
 
 public class WebDriverSettings {
     protected WebDriver driver;
-       protected BrowserChange browsers;
-    static String url = "https://career.softserveinc.com/uk-ua/learning-and-certification";
+    protected BrowserChange browsers;
+    protected InitializeVariable var;
+    protected String url;
 
 
     @BeforeTest
@@ -26,13 +28,17 @@ public class WebDriverSettings {
 
     }
 
+    @Parameters({"language"})
     @BeforeClass
-    public void navigate() {
+    public void navigate(String language) {
+        var = new InitializeVariable();
+        if (language.equalsIgnoreCase("UA")) url = var.urlUA;
+        else url = var.urlEN;
         driver.get(url);
     }
 
-//    @AfterTest
-//    public void tearDown() {
-//        driver.quit();
-//    }
+    @AfterTest
+    public void tearDown() {
+        driver.quit();
+    }
 }

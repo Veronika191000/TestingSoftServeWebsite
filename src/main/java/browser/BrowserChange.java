@@ -9,17 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BrowserChange {
     WebDriver driver;
 
-//    public WebDriver browserChange(String browser) {
-//        if (browser.equalsIgnoreCase("chrome")) {
-//            WebDriverManager.chromedriver().setup();
-//            driver = new ChromeDriver();
-//        } else if (browser.equalsIgnoreCase("firefox")) {
-//            WebDriverManager.firefoxdriver().setup();
-//            driver = new FirefoxDriver();
-//        }
-//        return driver;
-//    }
-
     public WebDriver browserChange(Browsers browser) {
         switch (browser) {
             case CHROME:

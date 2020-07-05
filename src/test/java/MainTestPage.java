@@ -9,12 +9,6 @@ import variables.InitializeVariable;
 public class MainTestPage extends WebDriverSettings {
     private TrainingAndSertification training;
     private InitializeVariable variable;
-    //  private WebDriver driver;
-
-    //    private Variables var;
-    //rivate String titleLearning = "НАВЧАННЯ І СЕРТИФІКАЦІЯ";
-    // private static final String[] titles = {"ФОРМАТ", "НАПРЯМКИ", "ОПЛАТА", "ЛОКАЦІЯ", "СТАТУС", "ДАТА ПРОВЕДЕННЯ"};//?????????????
-    // List<String> titlesFilter = Arrays.asList(titles);
 
     @BeforeTest
     @Parameters({"language"})
@@ -24,24 +18,15 @@ public class MainTestPage extends WebDriverSettings {
         variable = variable.initDependOnLanguage(language);
     }
 
-
-//    @Test
-//    public void checkingTitleLearning() {
-//        training.checkTitleLearning(titleLearning);
-//    }
-
     @Test
-    public void checkingTitleFilterFormatSertif() {
-        //  training.checkFilterTitle(titlesFilter);// не знаю оставлять или нет ????????????????????????
-        training.selectCheckbox(variable.form, variable.sertification);
-        training.verifyFormatResult(variable.sertification);
+    public void checkingQuery() {
+        training.verifySearchResult(variable.diretctionList);
     }
 
     @Test
-    public void checkingTitleFilterDirections() throws InterruptedException {
-        training.selectCheckboxTwoOptions(variable.directions, variable.direction, variable.occupation);
-//        training.selectCheckboxTwoOptions(variable.location, variable.country, variable.city);
-//        training.verifyLocationResult(variable.cityList);
+    public void checkingTitleFilterFormatSertif() {
+        training.selectCheckbox(variable.form, variable.sertification);
+        training.verifyFormatResult(variable.sertification);
     }
 
     @Test
@@ -57,29 +42,14 @@ public class MainTestPage extends WebDriverSettings {
     }
 
     @Test
+    public void checkingTitleFilterDirections() {
+        training.selectCheckboxTwoOptions(variable.directions, variable.direction, variable.occupation);
+        training.verifyDirectionResult(variable.diretctionList);
+    }
+
+    @Test
     public void checkingTitleFilterStatus() {
         training.selectCheckbox(variable.status, variable.statusOpen);
         training.verifyStatusResult(variable.statOpenlist);
     }
-
-
-    //Напрямки
-    //div[contains(@class, 'not-expanded')]//div[contains(text(), 'Напрямки')]
-    //li[@data-uid="34-Technologies & Development" and @aria-expanded="false"]//div[contains(@class,"e-icons")]
-    //34-Technologies & Development
-    ////////
-
-    ///////
-
-///////////////////////////
-//    @Test
-//    public void chekingTitleFilterFormatIntership(){
-//        training.selectCheckbox("Формат", "Інтернатура");
-//        training.verifyFormatResult("ІНТЕРНАТУРА");
-//    }
-//    @Test
-//    public void chekingTitleFilterFormatCourse(){
-//        training.selectCheckbox("Формат", "Курс");
-//        training.verifyFormatResult("КУРС");
-//    }
 }
